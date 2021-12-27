@@ -5,11 +5,20 @@
         <title>My Web Page</title>
         <link rel = "stylesheet" href = "15_11_2021.css">
     </head>
-    <body>
+    <body onload = "welcomeFunction() ; document.body.style.backgroundColor = 'pink'"
+          onresize = "document.body.style.backgroundColor = 'lightblue'"
+          onkeydown = "document.body.style.backgroundColor = 'white'"
+          onkeyup = "document.body.style.backgroundColor = 'lightyellow'">
+
+        <script>
+            function welcomeFunction() {
+                alert("Welcome!");
+            }
+        </script>
         <p>
             <strong> Introduction to Information Systems</strong>
         </p>
-        <p class = "centered">
+        <p class = "centered" onmouseover = "document.querySelector('.centered').style.font = 'bold 20pt Arial,serif'">
             <em>
                 Rabia Elif Çelik
                 <br>
@@ -20,23 +29,29 @@
         <p> Evolution of homo speciens</p>
 
         <p>
-            <ul>
+            <ul id = "unorderedL" 
+            onmouseover = "document.getElementById('unorderedL').style.backgroundColor = 'purple'">
                 <li> Homo habilis (able man)</li>
                 <li> Homo erectus (upright man)</li>
                 <li> Homo neanderthalensis</li>
                 <li> Homo floresiensis (hobbit)</li>
-                <ul>
+                <ul id = 'InsideUL'
+                onclick = "document.getElementById('InsideUL').style.backgroundColor= 'orange'">
                     <li> Homo sapiens (wise man)</li> 
                 </ul>
             </ul>
         </p>
 
-        <h1>Human Evolution</h1>
+        <h1 onmouseover = "style.color = 'orange' ;style.backgroundColor = 'lightgreen' " 
+            onmouseout = "style.color = 'red'; style.backgroundColor = 'white' ">
+            Human Evolution</h1>
         <img src = "evolution-diagram.png">
         <p>You can find the source by clicking the link: <a href = "https://www.biologyonline.com/dictionary/homo-sapiens-sapiens">Biology Online</a></p>
 
         <h2>The Clickable Image</h2>
-        <p>This is a link try it <a href = "https://www.biologyonline.com/dictionary/homo-sapiens-sapiens"> <img src = "evolution-diagram.png"></a></p>
+        <p>This is a link try it
+            <a href = "https://www.biologyonline.com/dictionary/homo-sapiens-sapiens"> 
+            <img id = "myImg" alt = "Evolution Diagram" onclick = "alert(document.getElementById('myImg').alt)"  src = "evolution-diagram.png"></a></p>
 
         <table>
             <tr>
